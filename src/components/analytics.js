@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-// import ApexCharts from 'apexcharts';
 import ReactApexChart from 'react-apexcharts'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -20,7 +19,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
@@ -66,29 +64,36 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 10,
       },
       paper:{
-          maxWidth:320
+          maxWidth:'100%',
+          width:548
       },
       colorb:{
         background: '#f9f9f9',
-        maxWidth: 1040
+        maxWidth: '100%',
+        width:1200,
+        paddingTop:64,
+        
       },
       root2: {
         minWidth: 275,
       },
       mwidth:{
-        maxWidth:"60%"
+        maxWidth:"100%",
+        width:800
       },
       mwidth2:{
         maxWidth:"39%"
       },
       table: {
-        minWidth: 330,
+        maxWidth: '100%',
+        width:730,
       },
 
   }));
+  
  function Analytics() {
 const [state1, setStaet1] = useState({
-    series: [44, 55, 41, 17, 15],
+    series: [70, 10, 10, 20, 10],
     options: {
       chart: {
         type: 'donut',
@@ -97,7 +102,9 @@ const [state1, setStaet1] = useState({
         breakpoint: 480,
         options: {
           chart: {
-            width: 200,
+            width: 500,
+            maxWidth:'100%',
+            height:200
           },
           legend: {
             position: 'bottom'
@@ -106,8 +113,6 @@ const [state1, setStaet1] = useState({
       }]
     }
 })
-
-
 
     const [state, setStaet] = useState({
         series: [{
@@ -139,10 +144,10 @@ const [state1, setStaet1] = useState({
             curve: 'straight',
             dashArray: [0, 8, 5]
           },
-          title: {
-            text: 'Page Statistics',
-            align: 'left'
-          },
+          // title: {
+          //   text: 'Page Statistics',
+          //   align: 'left'
+          // },
           legend: {
             tooltipHoverFormatter: function(val, opts) {
               return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
@@ -188,6 +193,10 @@ const [state1, setStaet1] = useState({
             borderColor: '#f1f1f1',
           }
         },
+      //   responsive: [{
+      //     breakpoint: undefined,
+      //     options: {},
+      // }],
     })
 
     function createData(name, calories, fat) {
@@ -219,334 +228,326 @@ const [state1, setStaet1] = useState({
     const classes = useStyles();
     return (
         <Container className={classes.colorb} fixed>
-         
-         <box display="flex" flexDirection="row"m={1} p={1} >
-                
-                <Box 
-                p={1} display="flex" 
-                flexDirection="row" 
-                justifyContent="space-between" 
-                alignItems="center" s
-                tyle={{ backgroundColor: '#cfe8fc' }}>
-                    <Box  >
-                    <Typography   variant="h3">Analytics</Typography>
-                    </Box>
-                    <Box display="flex" m={2} >
-                    <Button
-                        variant="outlined"
-                        color="primary"
-                        className={classes.root}
-                        startIcon={<NoteAddIcon />}
-                    >
-                      Reports
-                    </Button>
-                    <FormControl className={classes.formControl}>
-                    <InputLabel variant="outlined" shrink htmlFor="age-label-placeholder">
-                      Period
-                    </InputLabel>
-                    <Select
+          {/*1*/}
+
+          <Box 
+            p={1} display="flex" 
+            flexDirection="row" 
+            flexWrap="wrap"
+            justifyContent="space-between" 
+            alignItems="center"
+            tyle={{ backgroundColor: '#cfe8fc' }}
+            >
+              <Box>
+                <Typography variant="h3">Analytics</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <Button
                     variant="outlined"
-                    value="1"
+                    color="primary"
+                    className={classes.root}
+                    startIcon={<NoteAddIcon />}
+                >
+                  Reports
+                </Button>
+                <FormControl className={classes.formControl}>
+                  <InputLabel variant="outlined" shrink htmlFor="age-label-placeholder">
+                    Period
+                  </InputLabel>
+                  <Select
+                  variant="outlined"
+                  value="1"
+                  >
+                  <option value={1}>Last Week</option>
+                  <option value={10}>Last month</option>
+                  <option value={20}>Last Year</option>
+                  </Select>
+                </FormControl>
+              </Box>
+          </Box>
+        
+        {/*2*/}
+
+          <Grid container spacing={4}>
+              <Grid item xs={12} sm={6} md={3}>
+                <Paper className={classes.paper}>
+                  <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                    <div className="classes.content" >
+                      <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
+                        impressions
+                      </Typography>
+                      <Typography variant="h5" component="h2">
+                        1.9M
+                      </Typography>
+                    </div>
+                    <Typography className="classes.content" >img</Typography>
+                  </Box>
+                  <Divider />
+                  <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                          <Button
+                          color="primary"
+                          
+                          endIcon={<NoteAddIcon />}
+                      >
+                      Reports
+                      </Button> </Box>
+                </Paper>
+              </Grid>       
+              <Grid item xs={12} sm={6} md={3}>
+                      <Paper className={classes.paper}>
+                          <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                          <div className="classes.content" >
+                          
+                                  <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
+                                  impressions
+                                  </Typography>
+                                  <Typography variant="h5" component="h2">
+                                  1.9M
+                                  </Typography>
+                          </div>
+                          
+                          <Typography className="classes.content" >img</Typography>
+                          </Box>
+                          <Divider />
+                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                              <Button
+                              color="primary"
+                              
+                              endIcon={<NoteAddIcon />}
+                          >
+                          Reports
+                          </Button> </Box>
+                          </Paper>
+              </Grid>    
+              <Grid item xs={12} sm={6} md={3}>
+                      <Paper className={classes.paper}>
+                          <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                          <div className="classes.content" >
+                          
+                                  <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
+                                  impressions
+                                  </Typography>
+                                  <Typography variant="h5" component="h2">
+                                  1.9M
+                                  </Typography>
+                          </div>
+                          
+                          <Typography className="classes.content" >img</Typography>
+                          </Box>
+                          <Divider />
+                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                              <Button
+                              color="primary"
+                              
+                              endIcon={<NoteAddIcon />}
+                          >
+                          Reports
+                          </Button> </Box>
+                          </Paper>
+              </Grid>    
+              <Grid item xs={12} sm={6} md={3}>
+                      <Paper className={classes.paper}>
+                          <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                          <div className="classes.content" >
+                          
+                                  <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
+                                  impressions
+                                  </Typography>
+                                  <Typography variant="h5" component="h2">
+                                  1.9M
+                                  </Typography>
+                          </div>
+                          
+                          <Typography className="classes.content" >img</Typography>
+                          </Box>
+                          <Divider />
+                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                              <Button
+                              color="primary"
+                              
+                              endIcon={<NoteAddIcon />}
+                          >
+                          Reports
+                          </Button> </Box>
+                          </Paper>
+              </Grid>    
+          </Grid>
+
+        {/*3*/}
+
+          <Box display="flex" justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="1200px">
+            <Grid container spacing={3} >
+              <Grid item xs={12} md={8} >
+                <Card className={classes.root2}>
+                  <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                  <Typography variant="h5" component="h2">
+                  Traffic Sources
+                  </Typography>
+                  <ErrorOutlineIcon />
+                  </Box>
+                  <Divider></Divider>
+                  <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
+                      <Box display="flex" alignItems="center" >
+                      <Checkbox
+                          defaultChecked
+                          color="primary"
+                          inputProps={{ 'aria-label': 'secondary checkbox' }}
+                      />
+                      <Typography className={classes.content} variant="body1" component="h6">
+                      Organic
+                      </Typography>
+                      <ErrorOutlineIcon className={classes.content} />
+                      </Box>
+                      <Box display="flex" alignItems="center" >
+                      <Checkbox
+                          defaultChecked
+                          color="primary"
+                          inputProps={{ 'aria-label': 'secondary checkbox' }}
+                      />
+                      <Typography className={classes.content} variant="body1" component="h2">
+                      Referral
+                      </Typography>
+                      <ErrorOutlineIcon className={classes.content} />
+                      </Box><Box display="flex" alignItems="center" >
+                      <Checkbox
+                          defaultChecked
+                          color="primary"
+                          inputProps={{ 'aria-label': 'secondary checkbox' }}
+                      />
+                      <Typography className={classes.content} variant="body1" component="h2">
+                      Social Media
+                      </Typography>
+                      <ErrorOutlineIcon className={classes.content} />
+                      </Box>
+                  </Box>
+                  <Box>
+                    <React.Fragment>
+                      <CssBaseline />
+                      <ReactApexChart 
+                            options={state.options}
+                            series={state.series}
+                            type="line"
+                            height={400}
+                            
+                            className={classes.mwidth}
+                            />
+                    </React.Fragment>
+                  </Box>
+                </Card>
+              </Grid>
+
+             <Grid item xs={12} md={4} >
+               <Card className={classes.root2}>
+                  <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                    <Typography variant="h5" component="h2">
+                    Traffic Sources
+                    </Typography>
+                    <ErrorOutlineIcon />
+                  </Box>
+                  <Divider></Divider>
+                  <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
+                  {/* <TableContainer component={Paper}> */}
+                  <Table className={classes.table} aria-label="simple table">
+                    <TableHead>
+                    <TableRow className={classes.colorb}>
+                        <TableCell>COUNTRY</TableCell>
+                        <TableCell align="right"><Button endIcon={<ArrowDownwardIcon />}> VALUE </Button></TableCell>
+                        <TableCell align="right">SEO</TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {rows.map((row) => (
+                        <TableRow key={row.name}>
+                        <TableCell component="th" scope="row">
+                            {row.name}
+                        </TableCell>
+                        <TableCell align="right">{row.calories}</TableCell>
+                        <TableCell align="right">{row.fat}</TableCell>
+                        
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                  </Table>
+                  {/* </TableContainer> */}
+                  </Box>
+                  <Box marginLeft="25px" className="classes.cover" m={2}>                    
+                    <Button
+                        color="primary"
+                        endIcon={<NoteAddIcon />}
                     >
-                    <option value={1}>Last Week</option>
-                    <option value={10}>Last month</option>
-                    <option value={20}>Last Year</option>
-                    </Select>
-                     </FormControl>
-                     </Box>
-                </Box>
-        </box>
-
-        <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} md={3}>
-                    <Paper className={classes.paper}>
-                        <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                        <div className="classes.content" >
-                        
-                                <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
-                                impressions
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                1.9M
-                                </Typography>
-                        </div>
-                        
-                        <Typography className="classes.content" >img</Typography>
-                        </Box>
-                        <Divider />
-                    <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
-                            <Button
-                            color="primary"
-                            
-                            endIcon={<NoteAddIcon />}
-                        >
-                        Reports
-                        </Button> </Box>
-                        </Paper>
-            </Grid>       
-            <Grid item xs={12} sm={6} md={3}>
-                    <Paper className={classes.paper}>
-                        <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                        <div className="classes.content" >
-                        
-                                <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
-                                impressions
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                1.9M
-                                </Typography>
-                        </div>
-                        
-                        <Typography className="classes.content" >img</Typography>
-                        </Box>
-                        <Divider />
-                    <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
-                            <Button
-                            color="primary"
-                            
-                            endIcon={<NoteAddIcon />}
-                        >
-                        Reports
-                        </Button> </Box>
-                        </Paper>
-            </Grid>    
-            <Grid item xs={12} sm={6} md={3}>
-                    <Paper className={classes.paper}>
-                        <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                        <div className="classes.content" >
-                        
-                                <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
-                                impressions
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                1.9M
-                                </Typography>
-                        </div>
-                        
-                        <Typography className="classes.content" >img</Typography>
-                        </Box>
-                        <Divider />
-                    <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
-                            <Button
-                            color="primary"
-                            
-                            endIcon={<NoteAddIcon />}
-                        >
-                        Reports
-                        </Button> </Box>
-                        </Paper>
-            </Grid>    
-            <Grid item xs={12} sm={6} md={3}>
-                    <Paper className={classes.paper}>
-                        <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                        <div className="classes.content" >
-                        
-                                <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
-                                impressions
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                1.9M
-                                </Typography>
-                        </div>
-                        
-                        <Typography className="classes.content" >img</Typography>
-                        </Box>
-                        <Divider />
-                    <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
-                            <Button
-                            color="primary"
-                            
-                            endIcon={<NoteAddIcon />}
-                        >
-                        Reports
-                        </Button> </Box>
-                        </Paper>
-            </Grid>    
-        </Grid>
-        <Box display="flex" justifyContent="space-between" marginTop='10px' marginBottom='20px'>
-                <Grid container spacing={3} className={classes.mwidth}>
-                <Grid item xs={12} >
+                    Reports
+                    </Button> 
+                  </Box>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        {/*4*/}
+             <Box  display="flex"  justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="1200px" >
+                <Grid container spacing={3}>
+                  <Grid item xs={12}  md={8}>
                     <Card className={classes.root2}>
-                        <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                      <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
                         <Typography variant="h5" component="h2">
-                        Traffic Sources
+                          Traffic Sources
                         </Typography>
                         <ErrorOutlineIcon />
-                        </Box>
-                        <Divider></Divider>
-                        <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
-                            <Box display="flex" alignItems="center" >
-                            <Checkbox
-                                defaultChecked
-                                color="primary"
-                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            />
-                            <Typography className={classes.content} variant="body1" component="h6">
-                            Organic
-                            </Typography>
-                            <ErrorOutlineIcon className={classes.content} />
-                            </Box>
-                            <Box display="flex" alignItems="center" >
-                            <Checkbox
-                                defaultChecked
-                                color="primary"
-                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            />
-                            <Typography className={classes.content} variant="body1" component="h2">
-                            Referral
-                            </Typography>
-                            <ErrorOutlineIcon className={classes.content} />
-                            </Box><Box display="flex" alignItems="center" >
-                            <Checkbox
-                                defaultChecked
-                                color="primary"
-                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            />
-                            <Typography className={classes.content} variant="body1" component="h2">
-                            Social Media
-                            </Typography>
-                            <ErrorOutlineIcon className={classes.content} />
-                            </Box>
-                        </Box>
-                        <Box>
-                            <React.Fragment>
-                            <CssBaseline />
-                            <Container ms>
-                                    <ReactApexChart 
-                                    options={state.options}
-                                    series={state.series}
-                                    type="line"
-                                    height={400}
-                                    width={634}
-                                    />
-                            </Container>
-                            </React.Fragment></Box>
+                      </Box>
+                      <Divider></Divider>
+                      <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
+                        <Table className={classes.table} aria-label="simple table">
+                          <TableHead>
+                            <TableRow className={classes.colorb}>
+                                <TableCell>COUNTRY</TableCell>
+                                <TableCell align="right"><Button endIcon={<ArrowDownwardIcon />}> VALUE </Button></TableCell>
+                                <TableCell align="right">SEO</TableCell>
+                                <TableCell align="right">SEO</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                          {rows2.map((row) => (
+                            <TableRow key={row.name}>
+                              <TableCell component="th" scope="row">
+                                  {row.name}
+                              </TableCell>
+                              <TableCell align="right">{row.calories}</TableCell>
+                              <TableCell align="right">{row.fat}</TableCell>
+                              <TableCell align="right">{row.fat}</TableCell>
+                            </TableRow>
+                          ))}
+                          </TableBody>
+                        </Table>
+                      </Box>
                     </Card>
-                </Grid>
-                </Grid>
-                <Grid container spacing={3} className={classes.mwidth2}>
-                        <Grid item xs={12} >
-                        <Card className={classes.root2}>
-                            <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                            <Typography variant="h5" component="h2">
-                            Traffic Sources
-                            </Typography>
-                            <ErrorOutlineIcon />
-                            </Box>
-                            <Divider></Divider>
-                            <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
-                            {/* <TableContainer component={Paper}> */}
-                            <Table className={classes.table} aria-label="simple table">
-                                <TableHead>
-                                <TableRow className={classes.colorb}>
-                                    <TableCell>COUNTRY</TableCell>
-                                    <TableCell align="right"><Button endIcon={<ArrowDownwardIcon />}> VALUE </Button></TableCell>
-                                    <TableCell align="right">SEO</TableCell>
-                                </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                {rows.map((row) => (
-                                    <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">
-                                        {row.name}
-                                    </TableCell>
-                                    <TableCell align="right">{row.calories}</TableCell>
-                                    <TableCell align="right">{row.fat}</TableCell>
-                                    
-                                    </TableRow>
-                                ))}
-                                </TableBody>
-                            </Table>
-                            {/* </TableContainer> */}
-                                
-                            </Box>
-                            <Box marginLeft="25px" className="classes.cover" m={2}>                    
-                                <Button
-                                    color="primary"
-                                    endIcon={<NoteAddIcon />}
-                                >
-                                Reports
-                                </Button> 
-                            </Box>
-                        </Card>
+                  </Grid>    
 
-                        </Grid>
-                    </Grid>
-
-        </Box>
-        {/**/}
-             <Box  display="flex"  justifyContent="space-between" marginTop='10px' marginBottom='20px' >
-                <Grid container spacing={3} className={classes.mwidth}>
-                            <Grid item xs={12} >
-                            <Card className={classes.root2}>
-                                <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
-                                <Typography variant="h5" component="h2">
-                                Traffic Sources
-                                </Typography>
-                                <ErrorOutlineIcon />
-                                </Box>
-                                <Divider></Divider>
-                                <Box display="flex"justifyContent="start" alignItems="center" m={2} p={2}>
-                                {/* <TableContainer component={Paper}> */}
-                                <Table className={classes.table} aria-label="simple table">
-                                    <TableHead>
-                                    <TableRow className={classes.colorb}>
-                                        <TableCell>COUNTRY</TableCell>
-                                        <TableCell align="right"><Button endIcon={<ArrowDownwardIcon />}> VALUE </Button></TableCell>
-                                        <TableCell align="right">SEO</TableCell>
-                                        <TableCell align="right">SEO</TableCell>
-                                    </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                    {rows2.map((row) => (
-                                        <TableRow key={row.name}>
-                                        <TableCell component="th" scope="row">
-                                            {row.name}
-                                        </TableCell>
-                                        <TableCell align="right">{row.calories}</TableCell>
-                                        <TableCell align="right">{row.fat}</TableCell>
-                                        <TableCell align="right">{row.fat}</TableCell>
-
-                                        </TableRow>
-                                    ))}
-                                    </TableBody>
-                                </Table>
-                                {/* </TableContainer> */}
-                                    
-                                </Box>
-                                
-                            </Card>
-
-                            </Grid>
-                            
-                </Grid>
-                <Grid container spacing={3} className={classes.mwidth2}>
-                    <Grid item xs={12}>
+                  <Grid item xs={12}  md={4}>
                     <Card className={classes.root2}>
-                    <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                      <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
                         <Typography variant="h5" component="h2">
-                        Traffic Sources
+                          Traffic Sources
                         </Typography>
                         <ErrorOutlineIcon />
-                        </Box>
-                        <Divider />
-                        <Box marginTop='40px' marginBottom="150px">
-                            <ReactApexChart 
-                            options={state1.options} 
-                            series={state1.series} 
-                            type="donut" />
-                       </Box>
-                    <Divider />
-                    <Box marginLeft="25px" className="classes.cover" m={2}>                    
-                                <Button
-                                    color="primary"
-                                    endIcon={<NoteAddIcon />}
-                                >
-                                Reports
-                                </Button> 
-                            </Box>
+                      </Box>
+                      <Divider />
+                      <Box marginTop='40px' marginBottom="150px">
+                          <ReactApexChart 
+                          options={state1.options} 
+                          series={state1.series} 
+                          type="donut" />
+                      </Box>
+                      <Divider />
+                      <Box marginLeft="25px" className="classes.cover" m={2}>                    
+                        <Button
+                            color="primary"
+                            endIcon={<NoteAddIcon />}
+                        >
+                        Reports
+                        </Button> 
+                      </Box>
                     </Card>
-                    </Grid>
+                  </Grid>
+
                 </Grid>
              </Box>
 

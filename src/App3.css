@@ -1,0 +1,39 @@
+.MuiOutlinedInput-input {
+	padding: 10px !important;
+	text-align: start;
+	align-self: baseline;
+	margin-top: 10px !important;
+}
+.MuiInputBase-fullWidth {
+	width: 100%;
+	height: 102px;
+}
+.btn2{
+    margin: 0px !important;
+    padding: 0px !important;
+    color: rgb(107, 114, 128) !important;
+}
+.MuiBox-root-63{
+    height: auto;
+overflow: hidden;
+}
+.MuiBox-root-65 {
+    min-width: 0px;
+}
+.MuiFormControl-fullWidth {
+	width: 100% !important;
+	max-width: 100%;
+	margin: 12px !important;
+}
+.flexb{
+    margin-top: 15px;
+	justify-content: space-between;
+	display: flex;
+    align-items: center;
+}
+.bheader{
+display: flex;
+-moz-box-align: center;
+align-items: center;
+ padding: 32px 24px !important;
+}

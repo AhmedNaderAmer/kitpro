@@ -4,3 +4,46 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.MuiBox-root-27 {
+  padding: 0 !important;
+}
+.MuiBox-root {
+  padding: 0 !important;
+}
+.MuiCardContent-root{
+  padding: 32px 24px !important;
+}
+.MuiTypography-displayBlock {
+  display: block;
+  display: flex;
+  width: 200px;
+  max-width: 100%;
+  align-items: center;
+  align-self: baseline;
+  padding-bottom: 10px;
+}
+.MuiOutlinedInput-input{
+  padding: 10px !important;
+}
+.MuiFormControl-fullWidth {
+  width: 750px !important;
+  max-width: 100%;
+  margin: 12px!important;
+}
+
+MuiBox-root MuiBox-root-63::before{
+  border-radius: 50% !important;
+  content: "" !important;
+  display: block !important;
+  height: 8px !important;
+  left: 4px !important;
+  position: absolute !important;
+  top: 7px !important;
+  width: 8px !important;
+  z-index: 1 !important;
+  background-color: rgb(209, 67, 67) !important;
+
+}
+.hove{
+  transform: none;
+  }
