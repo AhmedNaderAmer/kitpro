@@ -37,3 +37,33 @@ display: flex;
 align-items: center;
  padding: 32px 24px !important;
 }
+.MuiTypography-root {
+	
+}
+.media{
+    width: 925px !important;
+    height: 500px !important;
+    max-width: 100% !important;
+}
+.paddingbox{
+    padding:16px!important;
+}
+.paddingbox1{
+    padding:24px!important;
+    padding-top: 0px !important;
+}
+.width{
+    width: 100% !important;
+}
+.love{
+    border-radius: 8px !important;
+padding: 8px !important;
+color: rgb(209, 67, 67) !important;
+}
+.chats{
+background-color: rgb(249, 250, 252) !important;
+border-radius: 8px !important;
+flex-grow: 1 !important;
+margin-left: 16px !important;
+padding: 16px !important;
+}

@@ -177,7 +177,12 @@ transform: none;
     transform: none;
 }
 .flexbasis{
+    box-sizing: border-box;
+    margin: 0px;
+    flex-direction: row;
     flex-basis: 100%;
+    flex-grow: 0;
+    max-width: 100%;
 }
 .colm{
     padding: 0px !important;

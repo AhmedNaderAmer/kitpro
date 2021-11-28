@@ -17,6 +17,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import '../App3.css';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import CardMedia from '@material-ui/core/CardMedia';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+
 
 
 function TabPanel(props) {
@@ -173,7 +179,11 @@ const useStyles = makeStyles((theme) => ({
           backgroundColor:'rgb(209, 67, 67)',
           marginLeft:'-20px'
 
-        }
+        },
+        media: {
+            height:500,
+            width: 925, 
+          },
       }
 
 
@@ -273,7 +283,7 @@ const classes = useStyles();
                     <Box marginTop="32px" marginBottom="32px">
                         <TabPanel value={value} index={0}>
                             <Grid container spacing={4}>
-                                <Grid item sx={12} className="flexbasis">
+                                <Grid item sx={12} lg={4} className="flexbasis">
                                     <Paper>
                                         <CardContent>
                                             <Box >
@@ -315,18 +325,20 @@ const classes = useStyles();
                                                              <ListItemText
                                                                 primary={
                                                                     <React.Fragment>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="h6"
-                                                                    >
-                                                                    John Doe
+                                                                    <Typography >
+                                                                        <Typography variant="body2">
+                                                                           <Link href="#">
+                                                                            Anika Visser
+                                                                        </Link>  Updated her status
                                                                     </Typography>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="p"
-                                                                    >
-                                                                    John Doe
                                                                     </Typography>
+                                                                    <Typography variant="body2">
+                                                                            Updated her status
+                                                                            <Link href="#">
+                                                                            Anika Visser
+                                                                        </Link>
+                                                                    </Typography>
+                                                                    
                                                                     </React.Fragment>
                                                                 }
                                                                 />
@@ -339,17 +351,8 @@ const classes = useStyles();
                                                              <ListItemText
                                                                 primary={
                                                                     <React.Fragment>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="h6"
-                                                                    >
-                                                                    John Doe
-                                                                    </Typography>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="p"
-                                                                    >
-                                                                    John Doe
+                                                                    <Typography variant="body2">
+                                                                          Updated her status
                                                                     </Typography>
                                                                     </React.Fragment>
                                                                 }
@@ -363,18 +366,20 @@ const classes = useStyles();
                                                              <ListItemText
                                                                 primary={
                                                                     <React.Fragment>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="h6"
-                                                                    >
-                                                                    John Doe
+                                                                    <Typography >
+                                                                        <Typography variant="body2">
+                                                                           <Link href="#">
+                                                                            Anika Visser
+                                                                        </Link>  Updated her status
                                                                     </Typography>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="p"
-                                                                    >
-                                                                    John Doe
                                                                     </Typography>
+                                                                    <Typography variant="body2">
+                                                                            Updated her status
+                                                                            <Link href="#">
+                                                                            Anika Visser
+                                                                        </Link>
+                                                                    </Typography>
+                                                                    
                                                                     </React.Fragment>
                                                                 }
                                                                 />
@@ -387,18 +392,9 @@ const classes = useStyles();
                                                              <ListItemText
                                                                 primary={
                                                                     <React.Fragment>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="h6"
-                                                                    >
-                                                                    John Doe
-                                                                    </Typography>
-                                                                    <Typography
-                                                                    className="colm"
-                                                                    variant="p"
-                                                                    >
-                                                                    John Doe
-                                                                    </Typography>
+                                                                        <Typography variant="body2">
+                                                                            Updated her status
+                                                                        </Typography>
                                                                     </React.Fragment>
                                                                 }
                                                                 />
@@ -412,7 +408,7 @@ const classes = useStyles();
 
                                     </Box>
                                 </Grid>
-                                <Grid item sx={12} className="flexbasis">
+                                <Grid item sx={12} lg={8} className="flexbasis">
                                     <Paper>
                                         <CardContent className="flex">
                                             <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
@@ -439,19 +435,15 @@ const classes = useStyles();
                                                         <Button className="btn2">
                                                             <SmsIcon fontSize="small" />
                                                         </Button>
-
-
                                                     </Box>
                                                     <Button
                                                      color="primary"
                                                      variant="contained"
                                                     >
-                                                            <SmsIcon fontSize="small" />
-                                                        </Button>
-
+                                                    <SmsIcon fontSize="small" />
+                                                    </Button>
                                                 </Box>
                                              </Box>
-
                                         </CardContent>
                                     </Paper>
                                     <Box marginTop="24px">
@@ -461,30 +453,237 @@ const classes = useStyles();
                                                     <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
                                                 </Box>
                                                 <Box>
-                                                    <Box display="flex" alignItems="center">
+                                                    <Box>
                                                         <Typography >
                                                             <Link href="#">
                                                                 Anika Visser
                                                             </Link>
-                                                            
-                                                        </Typography>
-                                                        <Typography variant="body2">
-                                                            Updated her status
+                                                              Updated her status
                                                         </Typography>
                                                     </Box>
-                                                    <Box display="flex" alignItems="center">
-                                                        <Typography >
-                                                            <Link href="#">
-                                                                Anika Visser
-                                                            </Link>
-                                                        </Typography>
+                                                    <Box display="flex" alignItems="center" marginTop="10px">
+                                                        <AccessAlarmIcon fontSize="small" />
                                                         <Typography variant="body2">
-                                                                Updated her status
-                                                            </Typography>
+                                                          4 hours ago
+                                                        </Typography>
                                                     </Box>
                                                 </Box>
                                             </Box>
+                                            <Box className="paddingbox">
+                                                <Typography variant="p">
+                                                Just made this overview screen for a project, what-cha thinkin?
+                                                </Typography>
+                                                <Box marginTop="24px" >
+                                                    <ButtonBase className="width">
+                                                        <CardMedia
+                                                            className="media"
+                                                            image="/post_1.png"
+                                                            title="Paella dish"
+                                                        />
+                                                    </ButtonBase>
+                                                    <Box display="flex" alignItems="center" marginTop="16px">
+                                                        <Button className="love">
+                                                            <FavoriteIcon fontSize="small" />
+                                                        </Button>
+                                                        <Typography variant="h6">24</Typography>
+                                                        <Box flexGrow="1"></Box>
+                                                        <Button color="primary">
+                                                            <ShareIcon fontSize="small" />
+                                                        </Button>
+                                                    </Box>
+                                                    <Divider className={classes.hr} />
+                                                    <Box display="flex" marginTop="24px">
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Box className="chats">
+                                                           <Box display="flex" alignItems="center" marginBottom="8px">
+                                                               <Typography variant="subtitle2">
+                                                                    <Link href="#">
+                                                                    Jie Yan Song
+                                                                    </Link>
+                                                               </Typography>
+                                                               <Box flexGrow="1"></Box>
+                                                               <Typography variant="body2">
+                                                                    3 hours ago
+                                                               </Typography>
+                                                           </Box>
+                                                           <Typography variant="body2">
+                                                           Could use some more statistics, but that’s me haha
+                                                           </Typography>
+                                                       </Box>
+                                                    </Box>
+                                                    <Box display="flex" marginTop="24px">
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Box className="chats">
+                                                           <Box display="flex" alignItems="center" marginBottom="8px">
+                                                               <Typography variant="subtitle2">
+                                                                    <Link href="#">
+                                                                    Jie Yan Song
+                                                                    </Link>
+                                                               </Typography>
+                                                               <Box flexGrow="1"></Box>
+                                                               <Typography variant="body2">
+                                                                    2 hours ago
+                                                               </Typography>
+                                                           </Box>
+                                                           <Typography variant="body2">
+                                                           Could use some more statistics, but that’s me haha
+                                                           </Typography>
+                                                       </Box>
+                                                    </Box>
+                                                    <Divider className={classes.hr} />
+                                                    <CardContent className="flex">
+                                                        <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                                        <Box flexGrow="1">
+                                                        <TextField
+                                                            size="medium"
+                                                            fullWidth
+                                                            id="outlined-required"
+                                                            placeholder="What's on your mind"
+                                                            variant="outlined"
+                                                            height="102px"
+                                                            />
+                                                            <Box className="flexb"> 
+                                                                <Box dispaly="block">
+                                                                    <Button className="btn2">
+                                                                        <SmsIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn2">
+                                                                        <SmsIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn2">
+                                                                        <SmsIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn2">
+                                                                        <SmsIcon fontSize="small" />
+                                                                    </Button>
+                                                                </Box>
+                                                                <Button
+                                                                color="primary"
+                                                                variant="contained"
+                                                                >
+                                                                <SmsIcon fontSize="small" />
+                                                                </Button>
+                                                            </Box>
+                                                        </Box>
+                                                    </CardContent>
+                                                </Box>
+                                            </Box>
                                         </Paper>
+                                        <Box marginTop="24px">
+                                            <Paper>
+                                                <Box className="bheader">
+                                                    <Box display="flex" marginRight="16px">
+                                                        <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                                    </Box>
+                                                    <Box>
+                                                        <Box>
+                                                            <Typography >
+                                                                <Link href="#">
+                                                                    Anika Visser
+                                                                </Link>
+                                                                Updated her status
+                                                            </Typography>
+                                                        </Box>
+                                                        <Box display="flex" alignItems="center" marginTop="10px">
+                                                            <AccessAlarmIcon fontSize="small" />
+                                                            <Typography variant="body2">
+                                                            4 hours ago
+                                                            </Typography>
+                                                        </Box>
+                                                    </Box>
+                                                </Box>
+                                                <Box className="paddingbox1">
+                                                    <Typography variant="body1">
+                                                    As a human being, you are designed in a way that makes you incapable of experiencing any positive emotion unless you set an aim and progress towards it. What makes you happy is not, in fact, attaining it, but making progress towards it.
+                                                    </Typography>
+                                                    <Box display="flex" alignItems="center" marginTop="16px">
+                                                        <Button className="love">
+                                                            <FavoriteIcon fontSize="small" />
+                                                        </Button>
+                                                        <Typography variant="h6">65</Typography>
+                                                        <Box flexGrow="1"></Box>
+                                                        <Button color="primary">
+                                                            <ShareIcon fontSize="small" />
+                                                        </Button>
+                                                    </Box>
+                                                    <Divider className={classes.hr} />
+                                                    <Box display="flex" marginTop="24px">
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Box className="chats">
+                                                           <Box display="flex" alignItems="center" marginBottom="8px">
+                                                               <Typography variant="subtitle2">
+                                                                    <Link href="#">
+                                                                    Jie Yan Song
+                                                                    </Link>
+                                                               </Typography>
+                                                               <Box flexGrow="1"></Box>
+                                                               <Typography variant="body2">
+                                                                    2 hours ago
+                                                               </Typography>
+                                                           </Box>
+                                                           <Typography variant="body2">
+                                                           Could use some more statistics, but that’s me haha
+                                                           </Typography>
+                                                       </Box>
+                                                    </Box>
+                                                    <Box display="flex" marginTop="24px">
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Box className="chats">
+                                                           <Box display="flex" alignItems="center" marginBottom="8px">
+                                                               <Typography variant="subtitle2">
+                                                                    <Link href="#">
+                                                                    Jie Yan Song
+                                                                    </Link>
+                                                               </Typography>
+                                                               <Box flexGrow="1"></Box>
+                                                               <Typography variant="body2">
+                                                                    2 hours ago
+                                                               </Typography>
+                                                           </Box>
+                                                           <Typography variant="body2">
+                                                           Could use some more statistics, but that’s me haha
+                                                           </Typography>
+                                                       </Box>
+                                                    </Box>
+                                                    <Divider className={classes.hr} />
+                                                    <CardContent className="flex">
+                                            <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                             <Box flexGrow="1">
+                                             <TextField
+                                                size="medium"
+                                                fullWidth
+                                                id="outlined-required"
+                                                placeholder="What's on your mind"
+                                                variant="outlined"
+                                                height="102px"
+                                                />
+                                                <Box className="flexb"> 
+                                                    <Box dispaly="block">
+                                                        <Button className="btn2">
+                                                            <SmsIcon fontSize="small" />
+                                                        </Button>
+                                                        <Button className="btn2">
+                                                            <SmsIcon fontSize="small" />
+                                                        </Button>
+                                                        <Button className="btn2">
+                                                            <SmsIcon fontSize="small" />
+                                                        </Button>
+                                                        <Button className="btn2">
+                                                            <SmsIcon fontSize="small" />
+                                                        </Button>
+                                                    </Box>
+                                                    <Button
+                                                     color="primary"
+                                                     variant="contained"
+                                                    >
+                                                    <SmsIcon fontSize="small" />
+                                                    </Button>
+                                                </Box>
+                                             </Box>
+                                        </CardContent>
+                                                </Box>
+                                            </Paper>
+                                        </Box>
 
                                     </Box>
                                 </Grid>
