@@ -26,12 +26,12 @@
     overflow: hidden !important;
     display: flex !important;
   }
-  .MuiBox-root-31 {
+  .ch1 {
     padding: 4px !important;
     border-radius: 50% !important;
     animation: 750ms ease 0s infinite normal none running pulse !important;
   }
-  .MuiBox-root-33 {
+  .ch {
     background-color: rgb(209, 67, 67);
     width: 12px;
     height: 12px;
@@ -45,21 +45,21 @@
           box-shadow: rgba(209, 67, 67, 0.1) 0px 0px 0px 6px;
       }
   }
-  .MuiBox-root-37 {
+  .ch2{
       background-color: rgba(209, 67, 67, 0.1);
       color: rgb(209, 67, 67);
       padding: 5px !important;
       margin-right: 15px;
       border-radius: 5px;
   }
-  .MuiBox-root-41 {
+  .ch3 {
       background-color: rgba(255, 176, 32, 0.1);
       color: rgb(255, 176, 32);
       margin-right: 15px;
       padding: 5px !important;
       border-radius: 5px;
   }
-  .MuiBox-root-45 {
+  .ch4 {
       background-color: rgba(80, 72, 229, 0.1);
       color: rgb(80, 72, 229);
       margin-right: 15px;
@@ -68,7 +68,7 @@
   }
   .MuiButton-containedPrimary {
     padding: 8px 20px !important;
-    margin: 12px !important;
+    margin: 12px ;
   }
   .MuiButton-outlinedPrimary{
     padding: 8px 20px !important;
@@ -152,7 +152,7 @@ overflow: scroll hidden;
 
 }
 .linkcolor{
-  color: #fff !important;
+  color: rgb(255, 255, 255) ;
 }
 .marg{
     margin:0 !important;

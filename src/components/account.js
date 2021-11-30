@@ -22,7 +22,6 @@ import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import CardContent from '@material-ui/core/CardContent';
 import Switch from '@material-ui/core/Switch';
-import "../App.css";
 import CreateIcon from '@material-ui/icons/Create';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -34,7 +33,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-
+import "../App.css";
 
 const preventDefault = (event) => event.preventDefault();
 const useStyles = makeStyles((theme) => ({
@@ -90,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
       colorb:{
         background: '#f9f9f9',
         maxWidth: '100%',
-        width:1200,
+        width:'100%',
         paddingTop:64,
         marginRight:'auto',
         marginLeft:'auto',
@@ -138,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
       },
       cli:{
         display:'flex',
-        borderBottom:"1px solid rgb(230,232,240)",
+        // borderBottom:"1px solid rgb(230,232,240)",
         marginTop:10,
         marginBottom:10,
 
@@ -328,9 +327,10 @@ export default function Account() {
                                       size="small"
                                       fullWidth
                                       id="outlined-required"
-                                      label="Full Name"
-                                      defaultValue="Anika Visser"
+                                      label="Email Address "
+                                      defaultValue="dummy.account@gmail.com"
                                       variant="outlined"
+                                      disabled 
                                       />
                                           <Button
                                               color="primary"
@@ -459,7 +459,7 @@ export default function Account() {
                             <Grid item xs={12}  md={4}>
                               <Card>
                                 <CardContent>
-                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/ch1.png" />
                                   <Box display="flex" marginBottom="8px" marginTop="8px">
                                     <Typography variant="h5">
                                      $0
@@ -483,7 +483,7 @@ export default function Account() {
                             <Grid item xs={12}  md={4}>
                               <Card>
                                 <CardContent>
-                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/ch1.png" />
                                   <Box display="flex" marginBottom="8px" marginTop="8px">
                                     <Typography variant="h5">
                                      $4.99
@@ -504,7 +504,7 @@ export default function Account() {
                             <Grid item xs={12}  md={4}>
                               <Card>
                                 <CardContent>
-                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                  <Avatar className={classes.pos}  alt="Remy Sharp" src="/ch1.png" />
                                   <Box display="flex" marginBottom="8px" marginTop="8px">
                                     <Typography variant="h5">
                                      $29.99
@@ -535,7 +535,7 @@ export default function Account() {
                             </Button>
                         </Box>
                         <Box className={classes.cbox}>
-                          <List>
+                          <List className="plist">
                             {/* 1 */}
                             <ListItem>
                             <ListItemText
@@ -654,7 +654,7 @@ export default function Account() {
                               <TableCell align="left">{row.calories}</TableCell>
                               <TableCell align="right">
                                 <Typography>
-                                  <Link href="#" onClick={preventDefault}underline='always'>
+                                  <Link href="#" onClick={preventDefault}underline='always' >
                                   View Invoice
                                   </Link>
                                 </Typography>
@@ -835,14 +835,14 @@ export default function Account() {
                     <TabPanel value={value} index={4}>
                     <Paper className={classes.paper}>
                       <CardContent >
-                        <Grid container spacing={3} >
+                        <Grid container spacing={3} className="dic" >
                           <Box display="flex" alignItems="center">
                           <Grid item xs={12} md={4}>
                             <Typography variant="h6">
                               Change password
                             </Typography>
                           </Grid>
-                          <Grid item xs={12} sm={12} md={8}>
+                          <Grid item xs={12} md={8}>
                             <Box display="flex" alignItems="center">
                               
                               <FormControl fullWidth  variant="outlined">

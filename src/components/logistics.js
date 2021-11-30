@@ -3,7 +3,6 @@ import { Container, Divider, Grid, Typography,Avater } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Box,Button,Paper,Avatar,List,ListItem,ListItemText } from '@material-ui/core';
 import SimCardIcon from '@material-ui/icons/SimCard';
-import "../App2.css";
 import GetAppIcon from '@material-ui/icons/GetApp';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ReactApexChart from 'react-apexcharts'
@@ -15,7 +14,10 @@ import TableRow from '@material-ui/core/TableRow';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Chip from '@material-ui/core/Chip';
-
+import WarningIcon from '@material-ui/icons/Warning';
+import ErrorIcon from '@material-ui/icons/Error';
+import TimelapseIcon from '@material-ui/icons/Timelapse';
+import "../App2.css";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -71,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
       colorb:{
         background: '#f9f9f9',
         maxWidth: '100%',
-        width:1200,
+        width:'100%',
         paddingTop:64,
         marginRight:'auto',
         marginLeft:'auto',
@@ -303,10 +305,10 @@ const classes = useStyles();
              <Grid container spacing={4} >
                     <Grid item xs={12} md={6}>
                         <Paper className={classes.paper}>
-                            <Box display="flex" alignItems="center" marginBottom="8px">
+                            <Box display="flex" alignItems="center" marginBottom="8px" >
                                 <Avatar variant="circle">
-                                    <Box>
-                                        <Box></Box>
+                                    <Box className="ch1" >
+                                        <Box className="ch" ></Box>
                                     </Box>
                                 </Avatar>
                                 <Typography variant="h5">38</Typography>
@@ -317,7 +319,9 @@ const classes = useStyles();
                     <Grid item xs={12} md={6}>
                         <Paper className={classes.paper}>
                             <Box display="flex" alignItems="center" marginBottom="8px">
-                                    <Box ><SimCardIcon  /></Box>
+                                    <Box  className="ch2">
+                                        <WarningIcon fontSize="small"  />
+                                    </Box>
                                 <Typography variant="h5">2</Typography>
                             </Box>
                             <Typography variant="p">Vehicles with errors</Typography>
@@ -326,7 +330,7 @@ const classes = useStyles();
                     <Grid item xs={12} md={6}>
                         <Paper className={classes.paper}>
                             <Box display="flex" alignItems="center" marginBottom="8px">
-                                <Box ><SimCardIcon  /></Box>
+                                <Box className="ch3" ><ErrorIcon fontSize="small" /></Box>
                                 <Typography variant="h5">1</Typography>
                             </Box>
                             <Typography variant="p">Vehicles deviated from route</Typography>
@@ -335,7 +339,7 @@ const classes = useStyles();
                     <Grid item xs={12} md={6}>
                         <Paper className={classes.paper}>
                             <Box display="flex" alignItems="center" marginBottom="8px">
-                                <Box ><SimCardIcon  /></Box>
+                                <Box className="ch4"><TimelapseIcon fontSize="small" /></Box>
                                 <Typography variant="h5">2</Typography>
                             </Box>
                             <Typography variant="p">Late vehicles</Typography>

@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
-
+import { useHistory, useLocation } from 'react-router-dom'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '500px',
+    maxWidth:"100%",
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -38,6 +39,13 @@ const useStyles = makeStyles((theme) => ({
   },
   links:{
       marginTop:20
+  },
+  log:{
+    width:"600px",
+    maxWidth:"100%",
+  },
+  appBar:{
+    display:'none'
   }
 }));
 
@@ -47,7 +55,7 @@ export default function SignIn() {
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState(false)
   const [passwordError, setPasswordError] = useState(false)
-
+  let history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault()
     setEmailError(false)
@@ -60,18 +68,19 @@ export default function SignIn() {
       setPasswordError(true)
     }
     if (email === "demo@devias.io" && password ==="Password123!") {
-        console.log(email, password)
+        
+     
         
     } 
   }
 
   return (
       
-    <Container component="main" maxWidth="xs" >
+    <Container component="main" className={classes.log} >
         {/* <Paper> */}
       <CssBaseline />
       <Paper className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        <Avatar src="../ch1.png" className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
@@ -79,15 +88,15 @@ export default function SignIn() {
         </Typography>
         <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
           <TextField
-          onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             variant="outlined"
             margin="normal"
             required
             fullWidth
             id="email"
+            placeholder="demo@devias.io"
             label="Email Address"
             name="email"
-            autoComplete="email"
             autoFocus
             error={emailError}
             helperText={emailError && "email eroor"}
@@ -102,6 +111,7 @@ export default function SignIn() {
             label="Password"
             type="password"
             id="password"
+            placeholder="Password123!"
             autoComplete="current-password"
             error={passwordError}
             helperText={passwordError && "password eroor"}
@@ -116,6 +126,9 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={() => {
+              history.push("/analytics")
+            }}
           >
             Sign In
           </Button>

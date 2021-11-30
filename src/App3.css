@@ -4,14 +4,17 @@
 	align-self: baseline;
 	margin-top: 10px !important;
 }
-.MuiInputBase-fullWidth {
-	width: 100%;
-	height: 102px;
-}
 .btn2{
     margin: 0px !important;
     padding: 0px !important;
     color: rgb(107, 114, 128) !important;
+}
+.btn3{
+    color: rgb(107, 114, 128) !important;
+    border-radius: 8px;
+    min-width: none;
+    padding: 8px;
+    margin: 8px;
 }
 .MuiBox-root-63{
     height: auto;
@@ -20,11 +23,11 @@ overflow: hidden;
 .MuiBox-root-65 {
     min-width: 0px;
 }
-.MuiFormControl-fullWidth {
+/* .MuiFormControl-fullWidth {
 	width: 100% !important;
 	max-width: 100%;
 	margin: 12px !important;
-}
+} */
 .flexb{
     margin-top: 15px;
 	justify-content: space-between;
@@ -37,13 +40,10 @@ display: flex;
 align-items: center;
  padding: 32px 24px !important;
 }
-.MuiTypography-root {
-	
-}
 .media{
-    width: 925px !important;
-    height: 500px !important;
-    max-width: 100% !important;
+    width: 925px ;
+    height: 500px ;
+    max-width: 100% ;
 }
 .paddingbox{
     padding:16px!important;
@@ -53,17 +53,49 @@ align-items: center;
     padding-top: 0px !important;
 }
 .width{
-    width: 100% !important;
+    width: 100% ;
 }
 .love{
-    border-radius: 8px !important;
-padding: 8px !important;
-color: rgb(209, 67, 67) !important;
+border-radius: 8px ;
+color: rgb(209, 67, 67) ;
+
 }
 .chats{
-background-color: rgb(249, 250, 252) !important;
-border-radius: 8px !important;
-flex-grow: 1 !important;
-margin-left: 16px !important;
+background-color: rgb(249, 250, 252) ;
+border-radius: 8px ;
+flex-grow: 1 ;
+margin-left: 16px ;
 padding: 16px !important;
 }
+.linkcolor1{
+    color: black !important;
+}
+.pb{
+    padding:16px 24px !important;
+}
+.pb1{
+    padding:24px !important;
+}
+.pb2{
+    padding:16px !important;
+}
+.h1{
+    height:"100%";
+}
+.pw{
+    padding-top: 10px;
+    width: 100%;
+}
+.MuiTypography-colorPrimary {
+	color: rgb(18, 24, 40) !important ;
+}
+.kit{
+    padding: 0px !important;
+    display: flex;
+}
+.MuiInputBase-fullWidth {
+	width: 98%;
+}
+.linkcolor{
+    color: rgb(255, 255, 255) !important ;
+  }

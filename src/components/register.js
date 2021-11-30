@@ -28,14 +28,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '500px',
     marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-  },links:{
+  },
+links:{
     marginTop:20
-}
+},
+log:{
+  width:"600px",
+  maxWidth:"100%",
+},
 }));
 
 export default function Register() {
@@ -56,17 +61,14 @@ export default function Register() {
     if (password === '') {
       setPasswordError(true)
     }
-    if (email === "demo@devias.io" && password ==="Password123!") {
-        console.log(email, password)
-        
-    } 
+    
   }
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" className={classes.log}>
       <CssBaseline />
       <Paper>
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        <Avatar src="../ch1.png"  className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
@@ -112,7 +114,7 @@ export default function Register() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Register
           </Button>
           <Divider />
           <Grid container className={classes.links}>

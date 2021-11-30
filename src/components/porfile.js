@@ -1,7 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles,withStyles } from '@material-ui/core/styles';
-import { Box, Container,Button,Avatar,Link, Divider, Grid, Paper, Card, CardContent,TextField  } from '@material-ui/core';
-import '../App2.css';
+import { Box, Container,Button,Avatar,Link, Divider, Grid, Paper, CardContent,TextField  } from '@material-ui/core';
 import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
 import { Typography } from '@material-ui/core';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
@@ -16,13 +15,20 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
-import '../App3.css';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import CardMedia from '@material-ui/core/CardMedia';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import ImageIcon from '@material-ui/icons/Image';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+import MoodIcon from '@material-ui/icons/Mood';
+import InsertLinkIcon from '@material-ui/icons/InsertLink';
+import SchoolIcon from '@material-ui/icons/School';
+import '../App2.css';
+import '../App3.css';
 
 
 function TabPanel(props) {
@@ -86,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
         paddingTop:24,
       },
       pos: {
-        marginRight: 16,
         marginTop:10,
       },
       cover: {
@@ -112,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
       colorb:{
         background: '#f9f9f9',
         maxWidth: '100%',
-        width:1200,
+        width:'100%',
         paddingTop:64,
         marginRight:'auto',
         marginLeft:'auto',
@@ -210,7 +215,18 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
 };
 const classes = useStyles();
+let [name, setName] = useState('pending');
 
+const handleClick = () =>{
+    if (name === 'pending'){
+        setName("coneccet")
+    }
+    if (name === 'coneccet'){
+        setName("pending")
+    }
+    
+   
+}
 
     return (
         <React.Fragment>
@@ -240,13 +256,11 @@ const classes = useStyles();
                 >
                 Connect
                 </Button>
-                <Typography>
-                    <Button variant="contained" color="primary" startIcon={<SmsIcon />}>
-                        <Link href="#" className="linkcolor">
-                            Send Massage
-                        </Link>
-                    </Button>
-                </Typography>
+                <Button variant="contained" color="primary" startIcon={<SmsIcon />}>
+                    <Link href="#" className="linkcolor">
+                        Send Massage
+                    </Link>
+                </Button>
             </Box>                
             <Button className="marg" startIcon={<MoreHorizIcon />}></Button>
             </Box>
@@ -346,14 +360,14 @@ const classes = useStyles();
                                                             {/* 2 */}
                                                             <ListItem >
                                                              <ListItemIcon>
-                                                                <BusinessCenterIcon />
+                                                                <SchoolIcon />
                                                                 </ListItemIcon>
                                                              <ListItemText
                                                                 primary={
                                                                     <React.Fragment>
-                                                                    <Typography variant="body2">
-                                                                          Updated her status
-                                                                    </Typography>
+                                                                        <Link href="#">
+                                                                            Add school or collage
+                                                                        </Link>
                                                                     </React.Fragment>
                                                                 }
                                                                 />
@@ -419,21 +433,21 @@ const classes = useStyles();
                                                 id="outlined-required"
                                                 placeholder="What's on your mind"
                                                 variant="outlined"
-                                                height="102px"
+                                                className="inputh"
                                                 />
                                                 <Box className="flexb"> 
                                                     <Box dispaly="block">
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
+                                                        <Button className="btn3">
+                                                            <ImageIcon fontSize="small" />
                                                         </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
+                                                        <Button className="btn3">
+                                                            <AttachFileIcon fontSize="small" />
                                                         </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
+                                                        <Button className="btn3">
+                                                            <InsertLinkIcon fontSize="small" />
                                                         </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
+                                                        <Button className="btn3">
+                                                            <MoodIcon fontSize="small" />
                                                         </Button>
                                                     </Box>
                                                     <Button
@@ -482,8 +496,8 @@ const classes = useStyles();
                                                         />
                                                     </ButtonBase>
                                                     <Box display="flex" alignItems="center" marginTop="16px">
-                                                        <Button className="love">
-                                                            <FavoriteIcon fontSize="small" />
+                                                        <Button>
+                                                            <FavoriteIcon className="love" fontSize="small" />
                                                         </Button>
                                                         <Typography variant="h6">24</Typography>
                                                         <Box flexGrow="1"></Box>
@@ -512,7 +526,7 @@ const classes = useStyles();
                                                        </Box>
                                                     </Box>
                                                     <Box display="flex" marginTop="24px">
-                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-2.png" />
                                                        <Box className="chats">
                                                            <Box display="flex" alignItems="center" marginBottom="8px">
                                                                <Typography variant="subtitle2">
@@ -531,7 +545,7 @@ const classes = useStyles();
                                                        </Box>
                                                     </Box>
                                                     <Divider className={classes.hr} />
-                                                    <CardContent className="flex">
+                                                    <CardContent className="kit">
                                                         <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
                                                         <Box flexGrow="1">
                                                         <TextField
@@ -544,17 +558,17 @@ const classes = useStyles();
                                                             />
                                                             <Box className="flexb"> 
                                                                 <Box dispaly="block">
-                                                                    <Button className="btn2">
-                                                                        <SmsIcon fontSize="small" />
+                                                                    <Button className="btn3">
+                                                                        <ImageIcon fontSize="small" />
                                                                     </Button>
-                                                                    <Button className="btn2">
-                                                                        <SmsIcon fontSize="small" />
+                                                                    <Button className="btn3">
+                                                                        <AttachFileIcon fontSize="small" />
                                                                     </Button>
-                                                                    <Button className="btn2">
-                                                                        <SmsIcon fontSize="small" />
+                                                                    <Button className="btn3">
+                                                                        <InsertLinkIcon fontSize="small" />
                                                                     </Button>
-                                                                    <Button className="btn2">
-                                                                        <SmsIcon fontSize="small" />
+                                                                    <Button className="btn3">
+                                                                        <MoodIcon fontSize="small" />
                                                                     </Button>
                                                                 </Box>
                                                                 <Button
@@ -598,7 +612,7 @@ const classes = useStyles();
                                                     </Typography>
                                                     <Box display="flex" alignItems="center" marginTop="16px">
                                                         <Button className="love">
-                                                            <FavoriteIcon fontSize="small" />
+                                                            <FavoriteIcon className="love" fontSize="small" />
                                                         </Button>
                                                         <Typography variant="h6">65</Typography>
                                                         <Box flexGrow="1"></Box>
@@ -627,7 +641,7 @@ const classes = useStyles();
                                                        </Box>
                                                     </Box>
                                                     <Box display="flex" marginTop="24px">
-                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-1.png" />
+                                                       <Avatar className={classes.pos}  alt="Remy Sharp" src="/avatar-2.png" />
                                                        <Box className="chats">
                                                            <Box display="flex" alignItems="center" marginBottom="8px">
                                                                <Typography variant="subtitle2">
@@ -646,41 +660,41 @@ const classes = useStyles();
                                                        </Box>
                                                     </Box>
                                                     <Divider className={classes.hr} />
-                                                    <CardContent className="flex">
-                                            <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
-                                             <Box flexGrow="1">
-                                             <TextField
-                                                size="medium"
-                                                fullWidth
-                                                id="outlined-required"
-                                                placeholder="What's on your mind"
-                                                variant="outlined"
-                                                height="102px"
-                                                />
-                                                <Box className="flexb"> 
-                                                    <Box dispaly="block">
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
-                                                        </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
-                                                        </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
-                                                        </Button>
-                                                        <Button className="btn2">
-                                                            <SmsIcon fontSize="small" />
-                                                        </Button>
-                                                    </Box>
-                                                    <Button
-                                                     color="primary"
-                                                     variant="contained"
-                                                    >
-                                                    <SmsIcon fontSize="small" />
-                                                    </Button>
-                                                </Box>
-                                             </Box>
-                                        </CardContent>
+                                                    <CardContent className="kit" >
+                                                        <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                                                        <Box flexGrow="1">
+                                                        <TextField
+                                                            size="medium"
+                                                            fullWidth
+                                                            id="outlined-required"
+                                                            placeholder="What's on your mind"
+                                                            variant="outlined"
+                                                            height="102px"
+                                                            />
+                                                            <Box className="flexb"> 
+                                                                <Box dispaly="block">
+                                                                    <Button className="btn3">
+                                                                        <ImageIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn3">
+                                                                        <AttachFileIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn3">
+                                                                        <InsertLinkIcon fontSize="small" />
+                                                                    </Button>
+                                                                    <Button className="btn3">
+                                                                        <MoodIcon fontSize="small" />
+                                                                    </Button>
+                                                                </Box>
+                                                                <Button
+                                                                color="primary"
+                                                                variant="contained"
+                                                                >
+                                                                <SmsIcon fontSize="small" />
+                                                                </Button>
+                                                            </Box>
+                                                        </Box>
+                                                    </CardContent>
                                                 </Box>
                                             </Paper>
                                         </Box>
@@ -688,6 +702,156 @@ const classes = useStyles();
                                     </Box>
                                 </Grid>
                             </Grid>
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <Box marginTop="40px">
+                                <Paper>
+                                    <Box>
+                                        <CardContent>
+                                            <Typography variant="h6">
+                                            Connections
+                                            </Typography>
+                                        </CardContent>
+                                    </Box>
+                                    <Divider />
+                                    <Box display="flex" className="pb" alignItems="center">
+                                        <SearchIcon />
+                                        <Box marginLeft='18px'>
+                                        <InputBase
+                                            className={classes.input}
+                                            placeholder="Search connections"
+                                            inputProps={{ 'aria-label': 'search google maps' }}
+                                        />
+                                        </Box>
+                                    </Box>
+                                    <Divider />
+                                    <Box className="pb1">
+                                        <Grid container spacing={3}>
+                                            <Grid item xs={12} md={6}>
+                                                <Paper className="h1">
+                                                    <Box display="flex" className="pb2">
+                                                    <Link href="#">
+                                                        <Avatar   alt="Remy Sharp" src="/p1.png" />
+                                                    </Link>
+                                                    <Box  marginLeft="16px" marginRight="16px" flexGrow="1">
+                                                        <Typography variant="subtitle2">
+                                                            <Link href="#" className="linkcolor1">
+                                                            Carson Darrin
+                                                            </Link>
+                                                        </Typography>
+                                                        <Typography variant="body2">
+                                                        10&nbsp; connections in common
+                                                        </Typography>
+                                                        <Box marginBottom="65px"></Box>
+                                                    </Box>
+                                                    <Button
+                                                     
+                                                    >
+                                                    <MoreHorizIcon fontSize="small" />
+                                                    </Button>
+                                                    </Box>
+                                                </Paper>
+                                            </Grid>
+                                            <Grid item xs={12} md={6}>
+                                                <Paper className="h1">
+                                                    <Box display="flex" className="pb2">
+                                                    <Link href="#">
+                                                        <Avatar   alt="Remy Sharp" src="/p2.png" />
+                                                    </Link>
+                                                    <Box  marginLeft="16px" marginRight="16px" flexGrow="1">
+                                                        <Typography variant="subtitle2">
+                                                            <Link href="#" className="linkcolor1">
+                                                            Fran Perez
+                                                            </Link>
+                                                        </Typography>
+                                                        <Typography variant="body2">
+                                                        10&nbsp; connections in common
+                                                        </Typography>
+                                                        <Button
+                                                        variant='outlined'
+                                                        color='primary'
+                                                        onClick={handleClick}
+                                                        >
+                                                        {name}
+                                                        </Button>
+                                                    </Box>
+                                                    <Button
+                                                     
+                                                    >
+                                                    <MoreHorizIcon fontSize="small" />
+                                                    </Button>
+                                                    </Box>
+                                                </Paper>
+                                            </Grid>
+                                            <Grid item xs={12} md={6}>
+                                                <Paper className="h1">
+                                                    <Box display="flex" className="pb2">
+                                                    <Link href="#">
+                                                        <Avatar   alt="Remy Sharp" src="/avatar-1.png" />
+                                                    </Link>
+                                                    <Box  marginLeft="16px" marginRight="16px" flexGrow="1">
+                                                        <Typography variant="subtitle2">
+                                                            <Link href="#" className="linkcolor1">
+                                                            Miron Vitold
+                                                            </Link>
+                                                        </Typography>
+                                                        <Typography variant="body2">
+                                                        10&nbsp; connections in common
+                                                        </Typography>
+                                                        <Button
+                                                        variant='outlined'
+                                                        color='primary'
+                                                        onClick={handleClick}
+                                                        >
+                                                        {name}
+                                                        </Button>
+                                                    </Box>
+                                                    <Button
+                                                    >
+                                                    <MoreHorizIcon fontSize="small" />
+                                                    </Button>
+                                                    </Box>
+                                                </Paper>
+                                            </Grid>
+                                            <Grid item xs={12} md={6}>
+                                                <Paper className="h1">
+                                                    <Box display="flex" className="pb2">
+                                                    <Link href="#">
+                                                        <Avatar   alt="Remy Sharp" src="/avatar-2.png" />
+                                                    </Link>
+                                                    <Box  marginLeft="16px" marginRight="16px" flexGrow="1">
+                                                        <Typography variant="subtitle2">
+                                                            <Link href="#" className="linkcolor1">
+                                                            Penjani Inyene
+                                                            </Link>
+                                                        </Typography>
+                                                        <Typography variant="body2">
+                                                        10&nbsp; connections in common
+                                                        </Typography>
+                                                        <Button
+                                                        variant='outlined'
+                                                        color='primary'
+                                                        onClick={handleClick}
+                                                        >
+                                                        {name}
+                                                        </Button>
+                                                    </Box>
+                                                    <Button
+                                                     
+                                                    >
+                                                    <MoreHorizIcon fontSize="small" />
+                                                    </Button>
+                                                    </Box>
+                                                </Paper>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                    
+                                </Paper>
+                               
+
+                            </Box>
+
                         </TabPanel>
 
                     </Box>

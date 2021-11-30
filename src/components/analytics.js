@@ -22,6 +22,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { Avatar } from '@material-ui/core';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -49,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
       },
       pos: {
         marginBottom: 12,
+        marginTop:10,
       },
       cover: {
         width: 120,
@@ -70,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
       colorb:{
         background: '#f9f9f9',
         maxWidth: '100%',
-        width:1200,
+        width:'100%',
         paddingTop:64,
         
       },
@@ -91,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 
   }));
   
- function Analytics() {
+ function Analytics({authorized}) {
 const [state1, setStaet1] = useState({
     series: [70, 10, 10, 20, 10],
     options: {
@@ -271,7 +277,7 @@ const [state1, setStaet1] = useState({
           <Grid container spacing={4}>
               <Grid item xs={12} sm={6} md={3}>
                 <Paper className={classes.paper}>
-                  <Box display="flex"justifyContent="space-between" alignItems="center" m={2} p={2}>
+                  <Box display="flex"justifyContent="space-between" alignItems="center" m={2} >
                     <div className="classes.content" >
                       <Typography variant="p" className={classes.title} color="textSecondary" gutterBottom>
                         impressions
@@ -280,16 +286,18 @@ const [state1, setStaet1] = useState({
                         1.9M
                       </Typography>
                     </div>
-                    <Typography className="classes.content" >img</Typography>
+                    <Typography className="classes.content" >
+                    <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                    </Typography>
                   </Box>
                   <Divider />
-                  <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                  <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={1}>                    
                           <Button
                           color="primary"
                           
-                          endIcon={<NoteAddIcon />}
+                          endIcon={<ArrowForwardIcon />}
                       >
-                      Reports
+                      See all visets
                       </Button> </Box>
                 </Paper>
               </Grid>       
@@ -306,16 +314,18 @@ const [state1, setStaet1] = useState({
                                   </Typography>
                           </div>
                           
-                          <Typography className="classes.content" >img</Typography>
+                          <Typography className="classes.content" >
+                          <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                          </Typography>
                           </Box>
                           <Divider />
-                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                      <Box display="flex" justifyContent="center" alignItems="center" m={1}>                    
                               <Button
                               color="primary"
                               
-                              endIcon={<NoteAddIcon />}
+                             startIcon={<KeyboardArrowUpIcon />}
                           >
-                          Reports
+                          12%more then last month
                           </Button> </Box>
                           </Paper>
               </Grid>    
@@ -332,16 +342,18 @@ const [state1, setStaet1] = useState({
                                   </Typography>
                           </div>
                           
-                          <Typography className="classes.content" >img</Typography>
+                          <Typography className="classes.content" >
+                          <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                          </Typography>
                           </Box>
                           <Divider />
-                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={1}>                    
                               <Button
                               color="primary"
                               
-                              endIcon={<NoteAddIcon />}
+                              startIcon={<KeyboardArrowDownIcon />}
                           >
-                          Reports
+                          30% less then last month
                           </Button> </Box>
                           </Paper>
               </Grid>    
@@ -358,16 +370,18 @@ const [state1, setStaet1] = useState({
                                   </Typography>
                           </div>
                           
-                          <Typography className="classes.content" >img</Typography>
+                          <Typography className="classes.content" >
+                          <Avatar className={classes.pos}  alt="Remy Sharp" src="/gh.png" />
+                          </Typography>
                           </Box>
                           <Divider />
-                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={2}>                    
+                      <Box display="flex" justifyContent="center" alignItems="center" className="classes.cover" m={1}>                    
                               <Button
                               color="primary"
                               
-                              endIcon={<NoteAddIcon />}
+                              startIcon={<KeyboardArrowUpIcon />}
                           >
-                          Reports
+                          12%more then last month
                           </Button> </Box>
                           </Paper>
               </Grid>    
@@ -375,7 +389,7 @@ const [state1, setStaet1] = useState({
 
         {/*3*/}
 
-          <Box display="flex" justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="1200px">
+          <Box display="flex" justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="100%">
             <Grid container spacing={3} >
               <Grid item xs={12} md={8} >
                 <Card className={classes.root2}>
@@ -473,9 +487,9 @@ const [state1, setStaet1] = useState({
                   <Box marginLeft="25px" className="classes.cover" m={2}>                    
                     <Button
                         color="primary"
-                        endIcon={<NoteAddIcon />}
+                        endIcon={<ArrowForwardIcon />}
                     >
-                    Reports
+                    See more
                     </Button> 
                   </Box>
                 </Card>
@@ -483,7 +497,7 @@ const [state1, setStaet1] = useState({
             </Grid>
           </Box>
         {/*4*/}
-             <Box  display="flex"  justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="1200px" >
+             <Box  display="flex"  justifyContent="space-between" marginTop='20px' marginBottom='20px' maxWidth="100%" width="100%" >
                 <Grid container spacing={3}>
                   <Grid item xs={12}  md={8}>
                     <Card className={classes.root2}>
@@ -540,9 +554,9 @@ const [state1, setStaet1] = useState({
                       <Box marginLeft="25px" className="classes.cover" m={2}>                    
                         <Button
                             color="primary"
-                            endIcon={<NoteAddIcon />}
+                            endIcon={<ArrowForwardIcon />}
                         >
-                        Reports
+                        See all visits
                         </Button> 
                       </Box>
                     </Card>
